@@ -3,7 +3,24 @@
 
 不改动ofxUI原有架构前提下 合理改造
 
-##何处改进
+
+##何处改进 2014.9.22更新
+
+
+* 改造ofxUIRangeSlider与ofxUISlider<br><br><br>
+    * 为其的顶部底部背景条更新为动画帧滚动条 理论上可支持模拟进度条样式<br><br><br>
+    * slider新增按钮(实质为更新后的ofxUIButton)理论支持所有ofxUIButton支持的特性<br><br><br>
+    * rangeSlider新增两个按钮并且保持原生拖动风格<br><br><br>
+
+
+* 改造ofxRadio<br><br><br>
+    * 将其内部逻辑转换为radio为管理一系列ofxUIButton的controller<br><br><br>
+    * 理论所有内部按钮支持ofxUIButton支持的所有新旧特性 且风格一致<br><br><br>
+
+
+
+=====
+###2014.3.1更新
 * 改造ofxUIScrollableCanvas的mouseDragged处理函数<br><br><br>
     * 即便是当hitWidget的时候也同样进行下拉滑动 优化滑动逻辑<br><br><br>
     * 默认情况Slider不会触发input改变滑动栏大小的机制<br><br><br>
