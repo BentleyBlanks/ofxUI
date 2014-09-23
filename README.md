@@ -19,6 +19,9 @@
 
 
 
+* 支持OSX系统下Xcode(6.0及以下版本)编译使用 <br><br><br>
+
+
 =====
 ###2014.3.1更新
 * 改造ofxUIScrollableCanvas的mouseDragged处理函数<br><br><br>
