@@ -636,9 +636,9 @@ void ofxUIRangeSlider::initFrameAnimation()
 
 	downBackground = new ofxUIFrameAnimation();
 
-	buttonLow = nullptr;
+	buttonLow = NULL;
 
-	buttonHigh = nullptr;
+	buttonHigh = NULL;
 }
 
 void ofxUIRangeSlider::drawFrameAnimation()
@@ -651,9 +651,11 @@ void ofxUIRangeSlider::drawFrameAnimation()
 		ofPoint highPos = ofPoint(position->x + upBackground->getWidth()*valuehigh - buttonHigh->getRect()->width/2, buttonHigh->getFrameAnimationPosition()->y);
 
 		downBackground->drawCurrentFrame(*position);
-		upBackground->drawCurrentFrame(ofPoint(lowPos.x, position->y), newWidth, upBackground->getHeight());
+        
+        ofPoint upPos(lowPos.x, position->y);
+		upBackground->drawCurrentFrame(upPos, newWidth, upBackground->getHeight());
 		
-		if(buttonLow != nullptr && buttonHigh != nullptr && 
+		if(buttonLow != NULL && buttonHigh != NULL && 
 			buttonLow->getDrawMode() != OFX_UI_DRAW_DEFAULT && buttonHigh->getDrawMode() != OFX_UI_DRAW_DEFAULT)
 		{
 			buttonLow->setFrameAnimationPosition(lowPos);
@@ -672,9 +674,11 @@ void ofxUIRangeSlider::drawFrameAnimation()
 		ofPoint highPos = ofPoint(buttonHigh->getFrameAnimationPosition()->x, position->y + (1-valuehigh)*rect->getHeight());
 
 		downBackground->drawCurrentFrame(*position);
-		upBackground->drawCurrentFrame(ofPoint(position->x, lowPos.y), upBackground->getWidth(), newHeight);
+        
+        ofPoint downPos(position->x, lowPos.y);
+		upBackground->drawCurrentFrame(downPos, upBackground->getWidth(), newHeight);
 
-		if(buttonLow != nullptr && buttonHigh != nullptr && 
+		if(buttonLow != NULL && buttonHigh != NULL && 
 			buttonLow->getDrawMode() != OFX_UI_DRAW_DEFAULT && buttonHigh->getDrawMode() != OFX_UI_DRAW_DEFAULT)
 		{
 			buttonLow->setFrameAnimationPosition(lowPos);

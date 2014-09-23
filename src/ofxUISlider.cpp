@@ -625,7 +625,7 @@ void ofxUISlider_<T>::initFrameAnimation()
 
 	downBackground = new ofxUIFrameAnimation();
 
-	button = nullptr;
+	button = NULL;
 }
 
 template<typename T>
@@ -641,7 +641,7 @@ void ofxUISlider_<T>::drawFrameAnimation()
 		
 
 		// --!可选不需要按钮
-		if(button != nullptr && button->getDrawMode() != OFX_UI_DRAW_DEFAULT)
+		if(button != NULL && button->getDrawMode() != OFX_UI_DRAW_DEFAULT)
 		{
 			// 按钮绘制时以左边为基准 因此为遮盖upBg需要将其绘制中心移动至中心
 			button->setFrameAnimationPosition(ofPoint(position->x + newWidth - button->getRect()->width/2, button->getRect()->y));
@@ -660,7 +660,7 @@ void ofxUISlider_<T>::drawFrameAnimation()
 
 		
 		// --!可选不需要按钮
-		if(button != nullptr && button->getDrawMode() != OFX_UI_DRAW_DEFAULT)
+		if(button != NULL && button->getDrawMode() != OFX_UI_DRAW_DEFAULT)
 		{
 			button->setFrameAnimationPosition(ofPoint(button->getRect()->x, position->y + newHeight));
 			button->setAABB(button->getRect()->x, position->y + newHeight, button->getRect()->width, button->getRect()->height);
