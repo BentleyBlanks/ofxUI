@@ -5,16 +5,16 @@
 
 
 ##何处改进  2014.11.12更新
-*  改造ofxUIFrameAnimation
-    * 支持自定义限帧 
-    * 最高层增添了接口能够直接自定义跳帧间隔(button toggle slider rangeSlider radio )
+*  改造ofxUIFrameAnimation<br><br><br>
+    * 支持自定义限帧 <br><br><br>
+    * 最高层增添了接口能够直接自定义跳帧间隔(button toggle slider rangeSlider radio )<br><br><br>
 
-*  改造ofxUIScrollableCanvas
-    * 更好的支持自定义样式
+*  改造ofxUIScrollableCanvas<br><br><br>
+    * 更好的支持自定义样式<br><br><br>
 
-*  修正潜在BUG
-    * 修正了当外部不自定义frameAnimation坐标但却尝试使用帧动画系统时的崩溃BUG
-    * 修正了当采用自动排版样式时 自定义样式不更新的错误
+*  修正潜在BUG<br><br><br>
+    * 修正了当外部不自定义frameAnimation坐标但却尝试使用帧动画系统时的崩溃BUG<br><br><br>
+    * 修正了当采用自动排版样式时 自定义样式不更新的错误<br><br><br>
 
 
 =====
