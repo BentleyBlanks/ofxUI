@@ -68,6 +68,7 @@ public:
 	// 初始化三个动画管理器
 	virtual void initFrameAnimation();
 	virtual void drawFrameAnimation();
+    virtual void setFrameAnimationInterval(float interval = 1.0 / 13);
 protected:
 
 	// --!按钮的三种状态图

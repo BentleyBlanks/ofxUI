@@ -355,3 +355,11 @@ void ofxUIRadio::drawFrameAnimation()
 		toggles[i]->drawFrameAnimation();
 	}
 }
+
+void ofxUIRadio::setFrameAnimationInterval(float interval)
+{
+    for(int i=0; i<toggles.size(); i++)
+    {
+        toggles[i]->setFrameAnimationInterval(interval);
+    }
+}

@@ -57,6 +57,7 @@ public:
 	
 	virtual void initFrameAnimation();
 	virtual void drawFrameAnimation();
+    virtual void setFrameAnimationInterval(float interval = 1.0 / 13);
 protected:
 
 private:

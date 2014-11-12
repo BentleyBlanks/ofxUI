@@ -355,19 +355,26 @@ void ofxUIScrollableCanvas::draw()
     ofxUISetRectMode(OFX_UI_RECTMODE_CORNER);
     ofSetLineWidth(1.0);
     
-    drawPadded();
-    
-    drawPaddedOutline();
-    
-    drawBack();
-    
-    drawFill();
-    
-    drawFillHighlight();
-    
-    drawOutline();
-    
-    drawOutlineHighlight();
+    if(isDrawable())
+    {
+        ofxUIPushStyle();
+        
+        drawPadded();
+        
+        drawPaddedOutline();
+        
+        drawBack();
+        
+        drawFill();
+        
+        drawFillHighlight();
+        
+        drawOutline();
+        
+        drawOutlineHighlight();
+        
+        ofxUIPopStyle();
+    }
     
     for(vector<ofxUIWidget *>::reverse_iterator it = widgets.rbegin(); it != widgets.rend(); ++it)
     {

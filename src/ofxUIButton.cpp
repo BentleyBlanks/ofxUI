@@ -359,3 +359,13 @@ void ofxUIButton::initFrameAnimation()
 	//	delete pressed;
 	pressed = new ofxUIFrameAnimation();
 }
+
+void ofxUIButton::setFrameAnimationInterval(float interval)
+{
+    hover->setInterval(interval);
+    
+    normal->setInterval(interval);
+    
+    pressed->setInterval(interval);
+}
+

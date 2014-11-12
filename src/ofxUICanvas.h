@@ -47,7 +47,7 @@ public:
     ofxUICanvas(ofxUICanvas *sharedResources, float defaultWidthSize = OFX_UI_GLOBAL_CANVAS_WIDTH, float defaultHeightSize = OFX_UI_GLOBAL_CANVAS_WIDTH);
     ofxUICanvas(string title);
     
-	// ËùÓĞµÄ¹¹Ôìº¯ÊıÔÚ³õÊ¼»¯Íê±Ï¸÷¸öÊôĞÔÖ®ºó¶¼»áµ÷ÓÃinit()
+	// Ã€Ë˜â€â€“ÂµÆ’Ï€Ï€â€˜Ãâˆ«Ã˜Â Ëâ€˜â„â‰¥Ä±Â ÂºÂªÃ˜Ã•ÃÂ±Å“âˆËœâˆË†Â Ã™â€“â€˜Ã·Ã†âˆ«Ã›âˆ‚ÂºÂªÂ·ÂµËœâ€âˆšinit()
     void init(int x, int y, int w, int h, ofxUICanvas *sharedResources = NULL);
     void copyCanvasStyle(ofxUICanvas *styler);
     void copyCanvasProperties(ofxUICanvas *styler);
@@ -67,15 +67,15 @@ public:
     bool isEnabled();
     void setVisible(bool _visible);
 	
-	// --!ĞÂÔö
-	// Ö»Ó°Ïì»æÖÆ¶ø²»Ó°Ïì×ÓÀàÊÂ¼ş·Ö·¢
+	// --!â€“Â¬â€˜Ë†
+	// Ã·Âªâ€âˆÅ“ÃÂªÃŠÃ·âˆ†âˆ‚Â¯â‰¤Âªâ€âˆÅ“Ãâ—Šâ€Â¿â€¡Â Â¬ÂºË›âˆ‘Ã·âˆ‘Â¢
 	bool isDrawable();
 	virtual void setDrawable(bool drawable);
-	// (¹Û²ìÕßÄ£Ê½) ½ÓÊÜ¶©ÔÄºÃÊÜ¹ÜÀíµÄ¿Ø¼şµÄĞÅÏ¢·ÖÅÉ
-	// ĞÎ²ÎÌá¹©×´Ì¬¸Ä±äµÄ×Ó¿Ø¼ş
-	// --!ÊµÖÊÉÏ²¢²»ÊÇÕæÕıµÄ¹Û²ìÕßÄ£Ê½ÖĞµÄ¶©ÔÄ·¢²¼µÄ»úÖÆ Ö»ÊÇÍ¨¹ı×Ó¿Ø¼şµ÷ÓÃÒÑ¾­Ä¬ÈÏ×¢²áºÃµÄparent CanvasÀ´·¢²¼ÏûÏ¢
-	// --!Í¬ÑùµÄ ×Ó¿Ø¼şÔÚÒÑ´´½¨Ö®¼Ê¾ÍÒÑ¾­±»canvas×¢²áÉÏÁË 
-	// --!Òò´ËÕâÀïÖ»ÊÇÊ¹ÓÃÁËË¼Ïë ²¢Ã»ÓĞÑÏ¸ñµÄÖ´ĞĞ
+	// (Ï€â‚¬â‰¤Ãâ€™ï¬‚Æ’Â£Â Î©) Î©â€Â â€¹âˆ‚Â©â€˜Æ’âˆ«âˆšÂ â€¹Ï€â€¹Â¿ÃŒÂµÆ’Ã¸Ã¿ÂºË›ÂµÆ’â€“â‰ˆÅ“Â¢âˆ‘Ã·â‰ˆâ€¦
+	// â€“Å’â‰¤Å’ÃƒÂ·Ï€Â©â—ŠÂ¥ÃƒÂ¨âˆÆ’Â±â€°ÂµÆ’â—Šâ€Ã¸Ã¿ÂºË›
+	// --!Â ÂµÃ·Â â€¦Å“â‰¤Â¢â‰¤ÂªÂ Â«â€™ÃŠâ€™ËÂµÆ’Ï€â‚¬â‰¤Ãâ€™ï¬‚Æ’Â£Â Î©Ã·â€“ÂµÆ’âˆ‚Â©â€˜Æ’âˆ‘Â¢â‰¤ÂºÂµÆ’ÂªË™Ã·âˆ† Ã·ÂªÂ Â«Ã•Â®Ï€Ëâ—Šâ€Ã¸Ã¿ÂºË›ÂµËœâ€âˆšâ€œâ€”Ã¦â‰ Æ’Â¨Â»Å“â—ŠÂ¢â‰¤Â·âˆ«âˆšÂµÆ’parent CanvasÂ¿Â¥âˆ‘Â¢â‰¤ÂºÅ“ËšÅ“Â¢
+	// --!Ã•Â¨â€”Ë˜ÂµÆ’ â—Šâ€Ã¸Ã¿ÂºË›â€˜â„â€œâ€”Â¥Â¥Î©Â®Ã·Ã†ÂºÂ Ã¦Ã•â€œâ€”Ã¦â‰ Â±Âªcanvasâ—ŠÂ¢â‰¤Â·â€¦Å“Â¡Ã€ 
+	// --!â€œÃšÂ¥Ã€â€™â€šÂ¿Ã”Ã·ÂªÂ Â«Â Ï€â€âˆšÂ¡Ã€Ã€ÂºÅ“Ã â‰¤Â¢âˆšÂªâ€â€“â€”Å“âˆÃ’ÂµÆ’Ã·Â¥â€“â€“
 	virtual void acceptUpdate(ofxUIWidget* notifier);
 
 	void toggleVisible();
@@ -304,7 +304,7 @@ public:
     ofxUIWidgetPosition getWidgetPosition();
     ofxUIWidgetFontType getWidgetFontSize();
 
-	// --!ÊÂ¼ş´¥·¢
+	// --!Â Â¬ÂºË›Â¥â€¢âˆ‘Â¢
 	void triggerEvent(ofxUIWidget *child);
 
     void setUIColors(ofxUIColor &cb, ofxUIColor &co, ofxUIColor &coh, ofxUIColor &cf, ofxUIColor &cfh, ofxUIColor &cp, ofxUIColor &cpo);
@@ -390,7 +390,7 @@ protected:
     bool bDrawWidgetPadding;
     bool bDrawWidgetPaddingOutline;    
 
-	// --!²»»æÖÆCanvas µ«²»Ó°Ïì×Ó¿Ø¼şµÄÊÂ¼ş½ÓÊÕ
-	// --!²»½«´ËÊôĞÔÌí¼Óµ½»ùÀàofxWidgetÉÏÊÇ·ÀÖ¹ÊôĞÔÎÛÈ¾ ×îĞ¡»¯¸Ä¶¯
+	// --!â‰¤ÂªÂªÃŠÃ·âˆ†Canvas ÂµÂ´â‰¤Âªâ€âˆÅ“Ãâ—Šâ€Ã¸Ã¿ÂºË›ÂµÆ’Â Â¬ÂºË›Î©â€Â â€™
+	// --!â‰¤ÂªÎ©Â´Â¥Ã€Â Ã™â€“â€˜ÃƒÃŒÂºâ€ÂµÎ©ÂªË˜Â¿â€¡ofxWidgetâ€¦Å“Â Â«âˆ‘Â¿Ã·Ï€Â Ã™â€“â€˜Å’â‚¬Â»Ã¦ â—ŠÃ“â€“Â°ÂªÃ˜âˆÆ’âˆ‚Ã˜
 	bool drawable;
 };

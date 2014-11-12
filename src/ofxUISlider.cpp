@@ -670,6 +670,16 @@ void ofxUISlider_<T>::drawFrameAnimation()
 }
 
 template<typename T>
+void ofxUISlider_<T>::setFrameAnimationInterval(float interval)
+{
+    button->setFrameAnimationInterval(interval);
+    
+    upBackground->setInterval(interval);
+    
+    downBackground->setInterval(interval);
+}
+
+template<typename T>
 void ofxUISlider_<T>::setButton(ofxUIButton *button)
 {
 	this->button = button;

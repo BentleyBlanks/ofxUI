@@ -73,7 +73,8 @@ public:
 	virtual void loadImageOfOffPressed(string path, string folderName, string suffixFormat, int sumNumber);
 
 	// --!初始化动画管理器
-	virtual void drawFrameAnimation();   
+	virtual void drawFrameAnimation();
+    virtual void setFrameAnimationInterval(float interval = 1.0 / 13);
 
 protected:
 	int value; 

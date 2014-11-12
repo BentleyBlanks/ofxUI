@@ -30,7 +30,7 @@
 ofxUIWidget::ofxUIWidget()
 : parent(NULL),
 rect(NULL),
-position(NULL),
+position(new ofPoint()),
 focus(false),
 
 paddedRect(NULL),
@@ -82,7 +82,7 @@ ofxUIWidget::~ofxUIWidget() {
 ofxUIWidget::ofxUIWidget(const ofxUIWidget &other)
 : parent(NULL),
 rect(NULL),
-position(NULL),
+position(new ofPoint()),
 focus(false),
 
 paddedRect(NULL),
@@ -230,7 +230,7 @@ void ofxUIWidget::draw() {
     ofxUIPopStyle();
 }
 
-void ofxUIWidget::initFrameAnimation()
+void ofxUIWidget::initFrameAnimation(float interval)
 {
 	// 需要特殊的子类覆盖
 }
@@ -365,6 +365,11 @@ void ofxUIWidget::setFrameAnimationPosition(ofPoint position)
 
 	//cout<< "position=" << position.x << ", " << position.y << endl;
 	this->position = new ofPoint(position.x, position.y);
+}
+
+void ofxUIWidget::setFrameAnimationInterval(float interval)
+{
+    
 }
 
 ofPoint* ofxUIWidget::getFrameAnimationPosition()

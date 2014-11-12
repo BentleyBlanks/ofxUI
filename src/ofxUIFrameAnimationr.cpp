@@ -9,14 +9,32 @@ ofxUIFrameAnimation::ofxUIFrameAnimation()
 	width = 0.0f;
 	height = 0.0f;
 
-	//���������
+    previousTime = 0;
+    interval = 0.07692308;
+	//«Âø’œÚ¡øºØ
 	pictures.clear();
+}
+
+ofxUIFrameAnimation::ofxUIFrameAnimation(float interval):interval(interval)
+{
+//    // 显式调用
+//    ofxUIFrameAnimation::ofxUIFrameAnimation();
+    currentFrame = 0;
+    sumFrames = 0;
+    
+    width = 0.0f;
+    height = 0.0f;
+    
+    previousTime = 0;
+    
+    //«Âø’œÚ¡øºØ
+    pictures.clear();
 }
 
 ofxUIFrameAnimation::~ofxUIFrameAnimation()
 {
-	// �����Ժ��ͷ�vector�ڴ涼������ clear() ��Ϊ swap()
-	// --!ժ��:http://blog.jobbole.com/37700/
+	// Ω®“È“‘∫Û Õ∑≈vectorƒ⁄¥Ê∂ºΩ´µ˜”√ clear() ∏ƒŒ™ swap()
+	// --!’™◊‘:http://blog.jobbole.com/37700/
 	vector<ofImage>(pictures).swap(pictures);
 }
 
@@ -25,22 +43,22 @@ void ofxUIFrameAnimation::loadImages(string& path, string& folderName, string& s
 	string current;
 	char convert[5];
 
-	// ��ͼ�������¼��س��������
+	// ‘⁄ÕººØ÷–÷ÿ–¬º”‘ÿ≥ˆ¿¥–Ë«Âø’
 	pictures.clear();
 	sumFrames = 0;
 
-	//ѭ�������������ļ���
+	//—≠ª∑ÃÌº”ÕÍ’˚∏ˆŒƒº˛º–
 	for(int i=1; i<=sumNumber; i++)
 	{
 		ofImage* temp = new ofImage();
 
-		//��int��iת��Ϊchar*֮����ת��Ϊstring
+		//Ω´int–Õi◊™ªªŒ™char*÷Æ∫Û‘Ÿ◊™ªªŒ™string
 		sprintf(convert, "%d", i);
 		current = convert;
-		//path/�ļ���/folderName-x.suffix
+		//path/Œƒº˛º–/folderName-x.suffix
 		if(!temp->loadImage(path + folderName + "/" + folderName + "-" + current + "." + suffixFormat))
 		{
-			printf("�޷���ָ���ļ����ж�ȡ֡�������ͼƬ");
+			printf("Œﬁ∑®¥”÷∏∂®Œƒº˛º–÷–∂¡»°÷°∂Øª≠œ‡πÿÕº∆¨");
 			continue;
 		}
 
@@ -50,14 +68,14 @@ void ofxUIFrameAnimation::loadImages(string& path, string& folderName, string& s
 		addFrame(*temp);
 	}
 
-	// ֡����������ƽ��ֵ
+	// ÷°∂Øª≠ºØøÌ∏ﬂ∆Ωæ˘÷µ
 	width /= sumFrames;
 	height /= sumFrames;
 }
 
 void ofxUIFrameAnimation::addFrame(ofImage& image)
 {
-	//��β��������ͼƬ/֡
+	//‘⁄Œ≤≤ø≤Â»Î–¬Õº∆¨/÷°
 	pictures.push_back(image);
 
 	sumFrames++;
@@ -71,17 +89,26 @@ void ofxUIFrameAnimation::drawCurrentFrame(ofPoint& position)
 
 void ofxUIFrameAnimation::drawCurrentFrame(ofPoint& position, float width, float height)
 {
-	//����ǰ����û��֡��ֱ������
+	//»Ùµ±«∞∂Øª≠√ª”–÷°‘Ú÷±Ω”Ã¯π˝
 	if(sumFrames == 0)
 		return;
 
-	//ͷβѭ�����µ�ǰ֡λ��ָ��
-	currentFrame = (currentFrame+1) % sumFrames;
+    nowTime = ofGetElapsedTimef();
+    if(nowTime - previousTime >= interval)
+    {
+        //Õ∑Œ≤—≠ª∑∏¸–¬µ±«∞÷°Œª÷√÷∏œÚ
+        currentFrame = (currentFrame+1) % sumFrames;
+        previousTime = nowTime;
+    }
 
-	//��ָ��λ��ֱ�ӻ��Ƴ�����ͼƬ������֡����
+	//‘⁄÷∏∂®Œª÷√÷±Ω”ªÊ÷∆≥ˆ∏¯∂®Õº∆¨≥§øÌµƒ÷°∂Øª≠
 	pictures[currentFrame].drawSubsection(position.x, position.y, width, height, 0, 0);
 }
 
+void ofxUIFrameAnimation::setInterval(float interval)
+{
+    this->interval = interval;
+}
 
 float ofxUIFrameAnimation::getWidth()
 {
@@ -94,7 +121,7 @@ float ofxUIFrameAnimation::getHeight()
 	return height;
 }
 
-// ���õ�ǰ����
+// ÷ÿ÷√µ±«∞º∆ ˝
 void ofxUIFrameAnimation::reset()
 {
 	currentFrame = 0;

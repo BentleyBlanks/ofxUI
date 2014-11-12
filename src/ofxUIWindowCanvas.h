@@ -12,15 +12,15 @@ public:
 	ofxUIWindowCanvas(string _label, float x, float y, float w, float h, int _size = OFX_UI_FONT_MEDIUM);
 
 	virtual void draw();
-	// ������͸��ɫ
+	// ±≥æ∞∞ÎÕ∏√˜…´
 	void setBokehColor(ofxUIColor bokeh_color);
 
-	// ���Ӱ�ťѡ��
+	// ÃÌº”∞¥≈•—°œÓ
 	void addSelectionButton();
 
 protected:
-	// �����黯��ɫ������
+	// ±≥æ∞–ÈªØ—’…´’‚’⁄’÷
 	ofxUIColor bokeh_color;
-	//// ȷ�Ϻ�ȡ����ť
+	//// »∑»œ∫Õ»°œ˚∞¥≈•
 	//ofxUIButton *okay;
 };

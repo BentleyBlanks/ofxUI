@@ -691,3 +691,14 @@ void ofxUIRangeSlider::drawFrameAnimation()
 		}
 	}
 }
+
+void ofxUIRangeSlider::setFrameAnimationInterval(float interval)
+{
+    buttonHigh->setFrameAnimationInterval(interval);
+    
+    buttonLow->setFrameAnimationInterval(interval);
+    
+    upBackground->setInterval(interval);
+    
+    downBackground->setInterval(interval);
+}

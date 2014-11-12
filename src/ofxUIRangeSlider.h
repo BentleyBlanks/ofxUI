@@ -98,7 +98,8 @@ public:
 
 	// 初始化动画管理器
 	virtual void initFrameAnimation();
-	virtual void drawFrameAnimation();    
+	virtual void drawFrameAnimation();
+    virtual void setFrameAnimationInterval(float interval = 1.0 / 13);
 
 protected:    
 	float valuelow, valuehigh, increment; 

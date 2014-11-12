@@ -79,23 +79,25 @@ public:
     void setTriggerType(ofxUITriggerType _triggerType);
     ofxUITriggerType getTriggerType();
     
-	// --!ĞÂÔö»æÖÆÄ£Ê½µÄgetter/setter
+	// --!â€“Â¬â€˜Ë†ÂªÃŠÃ·âˆ†Æ’Â£Â Î©ÂµÆ’getter/setter
 	virtual void setDrawMode(ofxUIDrawMode drawMode);
 	virtual ofxUIDrawMode getDrawMode();
 
-	// ÉèÖÃÅö×²¼ì²âµÄ¾ØĞÎÇøÓò
+	// â€¦Ã‹Ã·âˆšâ‰ˆË†â—Šâ‰¤ÂºÃâ‰¤â€šÂµÆ’Ã¦Ã¿â€“Å’Â«Â¯â€Ãš
 	virtual void setAABB(int x, int y, int width, int height);
 	virtual void setFrameAnimationPosition(ofPoint position);
+    // --!é™å¸§
+    virtual void setFrameAnimationInterval(float interval = 1.0 / 13);
 	virtual ofPoint* getFrameAnimationPosition();
 
 	virtual void setParent(ofxUIWidget *_parent);
 	virtual ofxUIWidget *getParent();
 
-	// --!È¡Õâ¸öÃû×ÖÆäÊµÎÒÒ²²»ÏëµÄ¡­¡­ÊµÔÚÊÇÃû×Ö¸øËüÈ¡×ßÁËÓÖ±ØĞëÒª¼æÈİÀÏ°æ±¾
+	// --!Â»Â°â€™â€šâˆË†âˆšËšâ—ŠÃ·âˆ†â€°Â ÂµÅ’â€œâ€œâ‰¤â‰¤ÂªÅ“ÃÂµÆ’Â°â‰ Â°â‰ Â Âµâ€˜â„Â Â«âˆšËšâ—ŠÃ·âˆÂ¯Ã€Â¸Â»Â°â—Šï¬‚Â¡Ã€â€Ã·Â±Ã¿â€“Ãâ€œâ„¢ÂºÃŠÂ»â€ºÂ¿Å“âˆÃŠÂ±Ã¦
 	void setCanvasController(ofxUICanvas* canvas);
 	ofxUICanvas *getCanvasController();
 
-	// ·¢²¼ÏûÏ¢¸ø¹Û²ìÕß
+	// âˆ‘Â¢â‰¤ÂºÅ“ËšÅ“Â¢âˆÂ¯Ï€â‚¬â‰¤Ãâ€™ï¬‚
 	virtual void notifyObserver();
 
 	virtual void setName(string _name);
@@ -199,16 +201,16 @@ public:
     
 #endif
 
-	// --!ĞÂÔö ÌÈÈô×ÓÀà¸²¸ÇÁË´Ë·½·¨Ôò»áµ÷ÓÃ×ÓÀàº¯Êı ·ñÔòÎª»ùÀà
-	virtual void initFrameAnimation();
+	// --!â€“Â¬â€˜Ë† ÃƒÂ»Â»Ã™â—Šâ€Â¿â€¡âˆâ‰¤âˆÂ«Â¡Ã€Â¥Ã€âˆ‘Î©âˆ‘Â®â€˜ÃšÂªÂ·ÂµËœâ€âˆšâ—Šâ€Â¿â€¡âˆ«Ã˜Â Ë âˆ‘Ã’â€˜ÃšÅ’â„¢ÂªË˜Â¿â€¡
+	virtual void initFrameAnimation(float interval);
 	virtual void drawFrameAnimation();
 
 protected:
 
 	ofxUIWidget *parent;
-	// --!ÍêÈ«²»ÖªµÀ×÷ÕßÎªÊ²Ã´Òª°ÑºÃ¶Ë¶ËµÄofxUICanvas parentĞ´³Éwidget
-	// --!½´ºÜÃ÷ÏÔ¾ÍµÈÓÚÊÇ°ÑcanvasµÄ¸ß¶ÈÏÂ·Åµ½widgetÁËºÃÂï£¡
-	// ÕıÈ·µÄ×ö·¨Ó¦¸ÃÊÇ½²CanvasºÍwidget¶ÀÁ¢¿ªÀ´ ¶ø²»ÊÇÈÃCanvasÈ¥¼Ì³ĞwidgetÒòÎªÎŞÂÛÊÇÔÚ¹¦ÄÜÉÏ»òÕßËµÊÇÔÚÊµ¼ÊÉÏÆäÊµ¶¼²»Ó¦¸ÃÅĞ¶¨Îª¼Ì³Ğ¹ØÏµ 
+	// --!Ã•ÃÂ»Â´â‰¤ÂªÃ·â„¢ÂµÂ¿â—ŠËœâ€™ï¬‚Å’â„¢Â â‰¤âˆšÂ¥â€œâ„¢âˆâ€”âˆ«âˆšâˆ‚Ã€âˆ‚Ã€ÂµÆ’ofxUICanvas parentâ€“Â¥â‰¥â€¦widget
+	// --!Î©Â¥âˆ«â€¹âˆšËœÅ“â€˜Ã¦Ã•ÂµÂ»â€â„Â Â«âˆâ€”canvasÂµÆ’âˆï¬‚âˆ‚Â»Å“Â¬âˆ‘â‰ˆÂµÎ©widgetÂ¡Ã€âˆ«âˆšÂ¬Ã”Â£Â°
+	// â€™ËÂ»âˆ‘ÂµÆ’â—ŠË†âˆ‘Â®â€Â¶âˆâˆšÂ Â«Î©â‰¤Canvasâˆ«Ã•widgetâˆ‚Â¿Â¡Â¢Ã¸â„¢Â¿Â¥ âˆ‚Â¯â‰¤ÂªÂ Â«Â»âˆšCanvasÂ»â€¢ÂºÃƒâ‰¥â€“widgetâ€œÃšÅ’â„¢Å’ï¬Â¬â‚¬Â Â«â€˜â„Ï€Â¶Æ’â€¹â€¦Å“ÂªÃšâ€™ï¬‚Ã€ÂµÂ Â«â€˜â„Â ÂµÂºÂ â€¦Å“âˆ†â€°Â Âµâˆ‚Âºâ‰¤Âªâ€Â¶âˆâˆšâ‰ˆâ€“âˆ‚Â®Å’â„¢ÂºÃƒâ‰¥â€“Ï€Ã¿Å“Âµ 
 	ofxUICanvas *canvasController;
 
 	ofxUIRectangle *rect;
@@ -231,7 +233,7 @@ protected:
 	bool draw_fill; 
 	bool draw_fill_highlight; 
 
-	// --!ĞÂÔö
+	// --!â€“Â¬â€˜Ë†
 	ofxUIDrawMode drawMode;
 	bool focus;
 

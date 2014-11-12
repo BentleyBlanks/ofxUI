@@ -188,6 +188,17 @@ void ofxUIToggle::drawFrameAnimation()
 	}
 }
 
+void ofxUIToggle::setFrameAnimationInterval(float interval)
+{
+    on_hover->setInterval(interval);
+    on_normal->setInterval(interval);
+    on_pressed->setInterval(interval);
+    
+    off_hover->setInterval(interval);
+    off_normal->setInterval(interval);
+    off_pressed->setInterval(interval);
+}
+
 void ofxUIToggle::loadImageOfOnHover(string path, string folderName, string suffixFormat, int sumNumber)
 {
 	on_hover->loadImages(path, folderName, suffixFormat, sumNumber);
