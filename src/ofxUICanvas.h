@@ -47,11 +47,16 @@ public:
     ofxUICanvas(ofxUICanvas *sharedResources, float defaultWidthSize = OFX_UI_GLOBAL_CANVAS_WIDTH, float defaultHeightSize = OFX_UI_GLOBAL_CANVAS_WIDTH);
     ofxUICanvas(string title);
     
+<<<<<<< HEAD
 	// 所有的构造函数在初始化完毕各个属性之后都会调用init()
     void init(int x, int y, int w, int h, ofxUICanvas *sharedResources = NULL);
 	// --!
 	virtual void initFbo();
 
+=======
+	// À˘”–µƒππ‘Ï∫Ø ˝‘⁄≥ı ºªØÕÍ±œ∏˜∏ˆ Ù–‘÷Æ∫Û∂ºª·µ˜”√init()
+    void init(int x, int y, int w, int h, ofxUICanvas *sharedResources = NULL);
+>>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
     void copyCanvasStyle(ofxUICanvas *styler);
     void copyCanvasProperties(ofxUICanvas *styler);
 #ifndef OFX_UI_NO_XML
@@ -70,6 +75,7 @@ public:
     bool isEnabled();
     void setVisible(bool _visible);
 	
+<<<<<<< HEAD
 	// --!新增
 	// 只影响绘制而不影响子类事件分发
 	bool isDrawable();
@@ -79,6 +85,17 @@ public:
 	// --!实质上并不是真正的观察者模式中的订阅发布的机制 只是通过子控件调用已经默认注册好的parent Canvas来发布消息
 	// --!同样的 子控件在已创建之际就已经被canvas注册上了 
 	// --!因此这里只是使用了思想 并没有严格的执行
+=======
+	// --!–¬‘ˆ
+	// ÷ª”∞œÏªÊ÷∆∂¯≤ª”∞œÏ◊”¿‡ ¬º˛∑÷∑¢
+	bool isDrawable();
+	virtual void setDrawable(bool drawable);
+	// (π€≤Ï’ﬂƒ£ Ω) Ω” ‹∂©‘ƒ∫√ ‹π‹¿Ìµƒøÿº˛µƒ–≈œ¢∑÷≈…
+	// –Œ≤ŒÃ·π©◊¥Ã¨∏ƒ±‰µƒ◊”øÿº˛
+	// --! µ÷ …œ≤¢≤ª «’Ê’˝µƒπ€≤Ï’ﬂƒ£ Ω÷–µƒ∂©‘ƒ∑¢≤ºµƒª˙÷∆ ÷ª «Õ®π˝◊”øÿº˛µ˜”√“—æ≠ƒ¨»œ◊¢≤·∫√µƒparent Canvas¿¥∑¢≤ºœ˚œ¢
+	// --!Õ¨—˘µƒ ◊”øÿº˛‘⁄“—¥¥Ω®÷Æº æÕ“—æ≠±ªcanvas◊¢≤·…œ¡À 
+	// --!“Ú¥À’‚¿Ô÷ª « π”√¡ÀÀºœÎ ≤¢√ª”–—œ∏Òµƒ÷¥––
+>>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 	virtual void acceptUpdate(ofxUIWidget* notifier);
 
 	void toggleVisible();
@@ -307,7 +324,11 @@ public:
     ofxUIWidgetPosition getWidgetPosition();
     ofxUIWidgetFontType getWidgetFontSize();
 
+<<<<<<< HEAD
 	// --!事件触发
+=======
+	// --! ¬º˛¥•∑¢
+>>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 	void triggerEvent(ofxUIWidget *child);
 
     void setUIColors(ofxUIColor &cb, ofxUIColor &co, ofxUIColor &coh, ofxUIColor &cf, ofxUIColor &cfh, ofxUIColor &cp, ofxUIColor &cpo);
@@ -393,7 +414,12 @@ protected:
     bool bDrawWidgetPadding;
     bool bDrawWidgetPaddingOutline;    
 
+<<<<<<< HEAD
 	// --!不绘制Canvas 但不影响子控件的事件接收
 	// --!不将此属性添加到基类ofxWidget上是防止属性污染 最小化改动
+=======
+	// --!≤ªªÊ÷∆Canvas µ´≤ª”∞œÏ◊”øÿº˛µƒ ¬º˛Ω” ’
+	// --!≤ªΩ´¥À Ù–‘ÃÌº”µΩª˘¿‡ofxWidget…œ «∑¿÷π Ù–‘Œ€»æ ◊Ó–°ªØ∏ƒ∂Ø
+>>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 	bool drawable;
 };

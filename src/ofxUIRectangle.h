@@ -34,8 +34,12 @@ public:
     ofxUIRectangle(ofxUIRectangle const & r);
     
     void setParent(ofxUIRectangle *_parent);
+<<<<<<< HEAD
     ofxUIRectangle* getParent();
 
+=======
+    
+>>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
     void set(float px, float py, float w, float h);
     
     void setX(float px);

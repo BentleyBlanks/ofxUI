@@ -130,6 +130,7 @@ void ofxUILabel::drawFill()
 		ofxUIFill();
 		ofxUISetColor(color_fill);
 
+<<<<<<< HEAD
 		// --!
 		int px=0, py=0;
 		ofxUIRectangle* parentRect = rect;
@@ -149,6 +150,10 @@ void ofxUILabel::drawFill()
 		// getX()和getY()并非实际意义上的xy 而是加了parent之后的坐标
 		//cout << label << floor(rect->getX()) << ", " << floor(rect->getY()) << endl;
 		//drawStringShadow(floor(rect->getX())+xOffset, floor(rect->getY()+rect->getHeight())+yOffset, label);
+=======
+		//if(bDrawString == true)
+		font->drawString(label, floor(rect->getX())+xOffset, floor(rect->getY()+rect->getHeight())+yOffset);
+>>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 	}
 }
 
@@ -159,6 +164,7 @@ void ofxUILabel::drawFillHighlight()
 		ofxUIFill();
 		ofxUISetColor(color_fill_highlight);
 
+<<<<<<< HEAD
 		// --!
 		int px=0, py=0;
 		ofxUIRectangle* parentRect = rect;
@@ -172,6 +178,10 @@ void ofxUILabel::drawFillHighlight()
 		}
 
 		font->drawString(label, floor(px)+xOffset, floor(py+rect->getHeight())+yOffset);
+=======
+		//if(bDrawString == true)
+		font->drawString(label, floor(rect->getX())+xOffset, floor(rect->getY()+rect->getHeight())+yOffset);
+>>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 	}
 }
 
@@ -180,6 +190,7 @@ void ofxUILabel::drawBackLabel()
 	ofxUIFill();
 	ofxUISetColor(color_back);
 
+<<<<<<< HEAD
 	// --!
 	int px=0, py=0;
 	ofxUIRectangle* parentRect = rect;
@@ -194,6 +205,10 @@ void ofxUILabel::drawBackLabel()
 
 	//if(bDrawString == true)
 	font->drawString(label, floor(px)+1+xOffset, floor(py+rect->getHeight())+1+yOffset);
+=======
+	//if(bDrawString == true)
+	font->drawString(label, floor(rect->getX())+1+xOffset, floor(rect->getY()+rect->getHeight())+1+yOffset);
+>>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 }
 
 void ofxUILabel::drawString(float x, float y, string _string)

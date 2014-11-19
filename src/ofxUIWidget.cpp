@@ -24,14 +24,22 @@
 
 #include "ofxUI.h"
 #include "ofxUIWidget.h"
+<<<<<<< HEAD
 #include "ofxUIMessage.h"
+=======
+
+
+>>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 
 ofxUIWidget::ofxUIWidget()
 : parent(NULL),
 rect(NULL),
 position(new ofPoint()),
 focus(false),
+<<<<<<< HEAD
 canvasController(NULL),
+=======
+>>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 
 paddedRect(NULL),
 font(NULL),
@@ -60,8 +68,12 @@ embedded(false),
 modal(false),
 triggerType(OFX_UI_TRIGGER_ALL),
 
+<<<<<<< HEAD
 drawMode(OFX_UI_DRAW_DEFAULT),
 previousState(-1)
+=======
+drawMode(OFX_UI_DRAW_DEFAULT)
+>>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 {
 #ifdef OFX_UI_TARGET_TOUCH
     touchId = -1;
@@ -85,7 +97,10 @@ ofxUIWidget::ofxUIWidget(const ofxUIWidget &other)
 rect(NULL),
 position(new ofPoint()),
 focus(false),
+<<<<<<< HEAD
 canvasController(NULL),
+=======
+>>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 
 paddedRect(NULL),
 //font(NULL),
@@ -96,7 +111,10 @@ ID(other.ID),
 hit(other.hit),
 visible(other.visible),
 state(other.state),
+<<<<<<< HEAD
 
+=======
+>>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 draw_back(other.draw_back),
 draw_outline(other.draw_outline),
 draw_outline_highlight(other.draw_outline_highlight),
@@ -116,8 +134,12 @@ embedded(other.embedded),
 modal(other.modal),
 triggerType(OFX_UI_TRIGGER_ALL),
 
+<<<<<<< HEAD
 drawMode(other.drawMode),
 previousState(-1)
+=======
+drawMode(other.drawMode)
+>>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 {
     if (other.rect) {
         initRect(other.rect->getX(), other.rect->getY(), other.rect->getWidth(), other.rect->getHeight());
@@ -155,8 +177,11 @@ ofxUIWidget& ofxUIWidget::operator=(const ofxUIWidget &other) {
 	drawMode = other.drawMode;
 	position = other.position;
 	focus = other.focus;
+<<<<<<< HEAD
 	canvasController = other.canvasController;
 	previousState = -1;
+=======
+>>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 
 	if (other.rect) {
         initRect(other.rect->getX(), other.rect->getY(), other.rect->getWidth(), other.rect->getHeight());
@@ -169,11 +194,14 @@ ofxUIWidget& ofxUIWidget::operator=(const ofxUIWidget &other) {
 }
 
 void ofxUIWidget::initRect(float x, float y, float w, float h) {
+<<<<<<< HEAD
 	bFirst = true;
 	// --!第一次需要重绘
 	bRedraw = true;
 	message = new ofxUIMessage(this);
 
+=======
+>>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
     if(rect != NULL) {
         delete rect;
     }
@@ -184,7 +212,10 @@ void ofxUIWidget::initRect(float x, float y, float w, float h) {
 	//	delete position;
 	// --!连带初始化左上角的绘制点
 	// position = new ofPoint();
+<<<<<<< HEAD
 	// frameBuffer.allocate(paddedRect->getWidth(), paddedRect->getHeight());
+=======
+>>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 }
 
 void ofxUIWidget::initPaddingRect() {
@@ -208,6 +239,7 @@ void ofxUIWidget::calculatePaddingRect() {
             r->getMaxY() > yMax ? (yMax = r->getMaxY()) : NULL;
         }
     }
+<<<<<<< HEAD
 	// 全局设为padding = 2 = OFX_UI_GLOBAL_PADDING
     paddedRect->set(-padding, -padding, xMax+padding*2.0, yMax+padding*2.0);
 }
@@ -262,6 +294,28 @@ void ofxUIWidget::draw() {
 		// 清屏
 		//ofClear(1.0,1.0,1.0,0.0);
 
+=======
+    paddedRect->set(-padding, -padding, xMax+padding*2.0, yMax+padding*2.0);
+}
+
+void ofxUIWidget::setup() {
+    //Custom Setup for Widgets
+}
+
+void ofxUIWidget::update() {
+
+}
+
+void ofxUIWidget::draw() {
+    ofxUIPushStyle();
+    
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+	// 默认的扁平风格绘制方案
+	if(drawMode == OFX_UI_DRAW_DEFAULT)
+	{
+>>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 		drawPadded();
 		drawPaddedOutline();
 		drawBack();
@@ -269,6 +323,7 @@ void ofxUIWidget::draw() {
 		drawOutlineHighlight();
 		drawFill();
 		drawFillHighlight();
+<<<<<<< HEAD
 		
 		//frameBuffer.end();
 
@@ -290,6 +345,13 @@ void ofxUIWidget::draw() {
 	//		frameBuffer.getWidth(),
 	//		frameBuffer.getHeight());
 	//}
+=======
+	}
+	else
+		drawFrameAnimation();
+    
+    ofxUIPopStyle();
+>>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 }
 
 void ofxUIWidget::initFrameAnimation(float interval)
@@ -304,51 +366,81 @@ void ofxUIWidget::drawFrameAnimation()
 
 void ofxUIWidget::drawBack() {
     if(draw_back) {
+<<<<<<< HEAD
 		//ofxUIPushStyle();
         ofxUIFill();
         ofxUISetColor(color_back);
         rect->draw();
 		//ofxUIPopStyle();
+=======
+        ofxUIFill();
+        ofxUISetColor(color_back);
+        rect->draw();
+>>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
     }
 }
 
 void ofxUIWidget::drawOutline() {
     if(draw_outline) {
+<<<<<<< HEAD
 		//ofxUIPushStyle();
         ofxUINoFill();
         ofxUISetColor(color_outline);
         rect->draw();
 		//ofxUIPopStyle();
+=======
+        ofxUINoFill();
+        ofxUISetColor(color_outline);
+        rect->draw();
+>>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
     }
 }
 
 void ofxUIWidget::drawOutlineHighlight() {
     if(draw_outline_highlight) {
+<<<<<<< HEAD
 		//ofxUIPushStyle();
         ofxUINoFill();
         ofxUISetColor(color_outline_highlight);
         rect->draw();
 		//ofxUIPopStyle();
+=======
+        ofxUINoFill();
+        ofxUISetColor(color_outline_highlight);
+        rect->draw();
+>>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
     }
 }
 
 void ofxUIWidget::drawFill() {
     if(draw_fill) {
+<<<<<<< HEAD
 		//ofxUIPushStyle();
         ofxUIFill();
         ofxUISetColor(color_fill);
         rect->draw();
 		//ofxUIPopStyle();
+=======
+        ofxUIFill();
+        ofxUISetColor(color_fill);
+        rect->draw();
+>>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
     }
 }
 
 void ofxUIWidget::drawFillHighlight() {
     if(draw_fill_highlight) {
+<<<<<<< HEAD
 		//ofxUIPushStyle();
         ofxUIFill();
         ofxUISetColor(color_fill_highlight);
         rect->draw();
 		//ofxUIPopStyle();
+=======
+        ofxUIFill();
+        ofxUISetColor(color_fill_highlight);
+        rect->draw();
+>>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
     }
 }
 
@@ -710,6 +802,7 @@ int ofxUIWidget::getID() {
 //    widget->getRect()->setY(0);
 //    calculatePaddingRect();
 //}
+<<<<<<< HEAD
 void ofxUIWidget::setRedraw(bool redraw)
 {
 	bRedraw = redraw;
@@ -719,6 +812,8 @@ bool ofxUIWidget::getRedraw()
 {
 	return bRedraw;
 }
+=======
+>>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 
 void ofxUIWidget::addWidget(ofxUIWidget *widget) {
 
@@ -824,6 +919,7 @@ void ofxUIWidget::notifyObserver()
 	getCanvasController()->acceptUpdate(this);
 }
 
+<<<<<<< HEAD
 void ofxUIWidget::updateMessage()
 {
 	// 更新底部控件也必定更新对应的文字
@@ -845,6 +941,8 @@ ofxUIMessage* ofxUIWidget::getMessage()
 {
 	return message;
 }
+=======
+>>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 
 bool ofxUIWidget::hasState() {
     return false;
