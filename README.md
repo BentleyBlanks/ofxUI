@@ -5,7 +5,28 @@
 支持自定义样式 自定义控件位置属性
 
 
-##何处改进  2014.11.12更新
+
+##何处改进 2014.11.19更新
+*  极大提高渲染效率 最差情况依旧能够提高将近5倍帧率<br><br><br>
+  * 控件加入极高效率的消息队列机制 最好的情况下是原先帧率的20倍<br><br><br>
+*  帧动画支持正常限帧 优化外部操作逻辑<br><br><br>
+*  更新scrollableCanvas绘制逻辑 使得其支持自定义皮肤样式<br><br><br>
+*  仍旧保证向下兼容<br><br><br>
+  * 修正些许潜在BUG<br><br><br>
+
+*  手动查看两者绘制效率的方式如下<br><br><br>
+*  新建工程中 关闭垂直同步 尽可能的调高FPS 对比两个相同程序的FPS值<br><br><br>
+
+```c
+//渲染/输出fps这个过程也会带来些许性能影响 但这并不影响大局
+
+ofSetVerticalSync(false);
+
+ofSetFrameRate(10000);
+```
+
+=====
+###2014.11.12更新
 *  改造ofxUIFrameAnimation<br><br><br>
     * 支持自定义限帧 <br><br><br>
     * 最高层增添了接口能够直接自定义跳帧间隔(button toggle slider rangeSlider radio )<br><br><br>
