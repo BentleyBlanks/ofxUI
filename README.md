@@ -9,15 +9,15 @@
 ###运行截图
 ####可自定义外观样式 支持帧动画渲染
 * ofxUI with TattyUI
-![image](https://github.com/BentleyBlanks/ofxUI/raw/master/pictures/%20(1).jpg)
-![image](https://github.com/BentleyBlanks/ofxUI/raw/master/pictures/%20(2).jpg)
+![image](https://github.com/BentleyBlanks/ofxUI/raw/master/pictures/2.jpg)
+![image](https://github.com/BentleyBlanks/ofxUI/raw/master/pictures/1.jpg)
 
 ####与原ofxUI渲染帧率对比(向下兼容部分)
 * ofxUI with TattyUI
-![image](https://github.com/BentleyBlanks/ofxUI/raw/master/pictures/%20(4).jpg)
+![image](https://github.com/BentleyBlanks/ofxUI/raw/master/pictures/4.jpg)
 
 * ofxUI
-![image](https://github.com/BentleyBlanks/ofxUI/raw/master/pictures/%20(3).jpg)
+![image](https://github.com/BentleyBlanks/ofxUI/raw/master/pictures/3.jpg)
 
 ##何处改进 2014.11.19更新
 *  极大提高渲染效率 最差情况依旧能够提高将近5倍帧率<br><br><br>
