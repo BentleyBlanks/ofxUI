@@ -12,7 +12,7 @@
 ![image](https://github.com/BentleyBlanks/ofxUI/raw/master/pictures/%20(1).jpg)
 ![image](https://github.com/BentleyBlanks/ofxUI/raw/master/pictures/%20(2).jpg)
 
-####与原ofxUI渲染帧率对比
+####与原ofxUI渲染帧率对比(向下兼容部分)
 * ofxUI with TattyUI
 ![image](https://github.com/BentleyBlanks/ofxUI/raw/master/pictures/%20(4).jpg)
 
