@@ -8,15 +8,16 @@
 =====
 ###运行截图
 ####可自定义外观样式 支持帧动画渲染
-![image](https://github.com/BentleyBlanks/ofxTrianglular/raw/master/pictures/(1).jpg)
-![image](https://github.com/BentleyBlanks/ofxTrianglular/raw/master/pictures/(2).jpg)
-
-####与原ofxUI渲染帧率对比
 * ofxUI with TattyUI
-![image](https://github.com/BentleyBlanks/ofxTrianglular/raw/master/pictures/(4).jpg)
+![image](https://github.com/BentleyBlanks/ofxUI/raw/master/pictures/%20(1).jpg)
+![image](https://github.com/BentleyBlanks/ofxUI/raw/master/pictures/%20(2).jpg)
+
+####与原ofxUI渲染帧率对比(向下兼容部分)
+* ofxUI with TattyUI
+![image](https://github.com/BentleyBlanks/ofxUI/raw/master/pictures/%20(4).jpg)
 
 * ofxUI
-![image](https://github.com/BentleyBlanks/ofxTrianglular/raw/master/pictures/(3).jpg)
+![image](https://github.com/BentleyBlanks/ofxUI/raw/master/pictures/%20(3).jpg)
 
 ##何处改进 2014.11.19更新
 *  极大提高渲染效率 最差情况依旧能够提高将近5倍帧率<br><br><br>
@@ -24,10 +25,11 @@
 *  帧动画支持正常限帧 优化外部操作逻辑<br><br><br>
 *  更新scrollableCanvas绘制逻辑 使得其支持自定义皮肤样式<br><br><br>
 *  仍旧保证向下兼容<br><br><br>
-  * 修正些许潜在BUG<br><br><br>
+  * 修正些许潜在BUG<br><br><br><br><br>
 
-*  手动查看两者绘制效率的方式如下<br><br><br>
-*  新建工程中 关闭垂直同步 尽可能的调高FPS 对比两个相同程序的FPS值<br><br><br>
+
+###让帧率飞起来
+*  新建工程中 关闭垂直同步 尽可能的调高FPS 对比两个相同程序的FPS值
 
 ```c
 //渲染/输出fps这个过程也会带来些许性能影响 但这并不影响大局
