@@ -77,14 +77,11 @@ void ofxUIRectangle::setParent(ofxUIRectangle *_parent)
     parent = _parent;
 }
 
-<<<<<<< HEAD
 ofxUIRectangle* ofxUIRectangle::getParent()
 {
 	return parent;
 }
 
-=======
->>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 void ofxUIRectangle::setHeight(float _height)
 {
     height = _height;
@@ -185,7 +182,6 @@ void ofxUIRectangle::draw()
 {
     if(parent != NULL)
     {
-<<<<<<< HEAD
 		int px=x, py=y;
 		ofxUIRectangle* parentRect = this;
 		// 循环到canvas的上一层
@@ -205,13 +201,6 @@ void ofxUIRectangle::draw()
 		// --!这里画布的底框绘制位置理应与画布fbo之间的位移为0
 		ofxUIDrawRect(0,0,width,height);
         //ofxUIDrawRect(x,y,width,height);
-=======
-        ofxUIDrawRect(parent->getX()+x, parent->getY()+y, width, height);
-    }
-    else
-    {
-        ofxUIDrawRect(x,y,width,height);
->>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
     }
 }
 
@@ -229,11 +218,6 @@ float ofxUIRectangle::getX(bool recursive)
 
 float ofxUIRectangle::getY(bool recursive)
 {
-<<<<<<< HEAD
-=======
-
-	
->>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 	if(parent != NULL && recursive)
     {
         return (y+parent->getY());

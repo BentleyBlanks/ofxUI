@@ -33,10 +33,7 @@
 
 class ofxUIFrameAnimation;
 class ofxUICanvas;
-<<<<<<< HEAD
 class ofxUIMessage;
-=======
->>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 
 class ofxUIWidget           
 {
@@ -48,11 +45,8 @@ public:
     
     virtual void initRect(float x = 0, float y = 0, float w = 0, float h = 0);
     virtual void initPaddingRect();
-<<<<<<< HEAD
 	// --!
 	virtual void initFbo();
-=======
->>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
     virtual void calculatePaddingRect();
 
     virtual void setup(); 
@@ -88,19 +82,11 @@ public:
     void setTriggerType(ofxUITriggerType _triggerType);
     ofxUITriggerType getTriggerType();
     
-<<<<<<< HEAD
 	// --!新增绘制模式的getter/setter
 	virtual void setDrawMode(ofxUIDrawMode drawMode);
 	virtual ofxUIDrawMode getDrawMode();
 
 	// 设置碰撞检测的矩形区域
-=======
-	// --!–¬‘ˆªÊ÷∆ƒ£ Ωµƒgetter/setter
-	virtual void setDrawMode(ofxUIDrawMode drawMode);
-	virtual ofxUIDrawMode getDrawMode();
-
-	// …Ë÷√≈ˆ◊≤ºÏ≤‚µƒæÿ–Œ«¯”Ú
->>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 	virtual void setAABB(int x, int y, int width, int height);
 	virtual void setFrameAnimationPosition(ofPoint position);
     // --!限帧
@@ -110,7 +96,6 @@ public:
 	virtual void setParent(ofxUIWidget *_parent);
 	virtual ofxUIWidget *getParent();
 
-<<<<<<< HEAD
 	// --!取这个名字其实我也不想的……实在是名字给它取走了又必须要兼容老版本
 	void setCanvasController(ofxUICanvas* canvas);
 	ofxUICanvas *getCanvasController();
@@ -123,15 +108,6 @@ public:
 	// 并不安全！
 	ofxUIMessage* getMessage();
 
-=======
-	// --!»°’‚∏ˆ√˚◊÷∆‰ µŒ““≤≤ªœÎµƒ°≠°≠ µ‘⁄ «√˚◊÷∏¯À¸»°◊ﬂ¡À”÷±ÿ–Î“™ºÊ»›¿œ∞Ê±æ
-	void setCanvasController(ofxUICanvas* canvas);
-	ofxUICanvas *getCanvasController();
-
-	// ∑¢≤ºœ˚œ¢∏¯π€≤Ï’ﬂ
-	virtual void notifyObserver();
-
->>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 	virtual void setName(string _name);
     virtual string& getName();
     
@@ -219,13 +195,10 @@ public:
     virtual void setColorPaddedOutline(ofxUIColor _color_padded_rect_outline);
     ofxUIColor& getColorPaddedOutline();
 
-<<<<<<< HEAD
 	// --!重绘接口
 	void setRedraw(bool redraw);
 	bool getRedraw();
 
-=======
->>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
     virtual void addModalWidget(ofxUIWidget *widget);
     virtual void removeModalWidget(ofxUIWidget *widget);
 
@@ -240,26 +213,16 @@ public:
     
 #endif
 
-<<<<<<< HEAD
 	// --!新增 倘若子类覆盖了此方法则会调用子类函数 否则为基类
-=======
-	// --!–¬‘ˆ Ã»»Ù◊”¿‡∏≤∏«¡À¥À∑Ω∑®‘Úª·µ˜”√◊”¿‡∫Ø ˝ ∑Ò‘ÚŒ™ª˘¿‡
->>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 	virtual void initFrameAnimation(float interval);
 	virtual void drawFrameAnimation();
 
 protected:
 
 	ofxUIWidget *parent;
-<<<<<<< HEAD
 	// --!完全不知道作者为什么要把好端端的ofxUICanvas parent写成widget
 	// --!酱很明显就等于是把canvas的高度下放到widget了好嘛！
 	// 正确的做法应该是讲Canvas和widget独立开来 而不是让Canvas去继承widget因为无论是在功能上或者说是在实际上其实都不应该判定为继承关系 
-=======
-	// --!ÕÍ»´≤ª÷™µ¿◊˜’ﬂŒ™ ≤√¥“™∞—∫√∂À∂ÀµƒofxUICanvas parent–¥≥…widget
-	// --!Ω¥∫‹√˜œ‘æÕµ»”⁄ «∞—canvasµƒ∏ﬂ∂»œ¬∑≈µΩwidget¡À∫√¬Ô£°
-	// ’˝»∑µƒ◊ˆ∑®”¶∏√ «Ω≤Canvas∫Õwidget∂¿¡¢ø™¿¥ ∂¯≤ª «»√Canvas»•ºÃ≥–widget“ÚŒ™Œﬁ¬€ «‘⁄π¶ƒ‹…œªÚ’ﬂÀµ «‘⁄ µº …œ∆‰ µ∂º≤ª”¶∏√≈–∂®Œ™ºÃ≥–πÿœµ 
->>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 	ofxUICanvas *canvasController;
 
 	ofxUIRectangle *rect;
@@ -272,12 +235,9 @@ protected:
     int ID;
     bool hit; 
     int state;
-<<<<<<< HEAD
 	// --!用于判断和上一帧控件状态是否发生变化
 	int previousState;
 
-=======
->>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
     ofxUITriggerType triggerType; 
     bool embedded;
     bool modal;
@@ -288,7 +248,6 @@ protected:
 	bool draw_fill; 
 	bool draw_fill_highlight; 
 
-<<<<<<< HEAD
 	// --!新增
 	ofxUIDrawMode drawMode;
 	bool focus;
@@ -297,11 +256,6 @@ protected:
 	// --!此控件是否需要重绘
 	bool bRedraw;
 	ofxUIMessage* message;
-=======
-	// --!–¬‘ˆ
-	ofxUIDrawMode drawMode;
-	bool focus;
->>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 
 	ofxUIColor color_back;
 	ofxUIColor color_outline; 

@@ -21,11 +21,7 @@
  SOFTWARE.
  
  **********************************************************************************/
-<<<<<<< HEAD
 #include "ofxUIMessage.h"
-=======
-
->>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 #include "ofxUICanvas.h"
 #include "ofxUI.h"
 
@@ -133,10 +129,7 @@ ofxUICanvas& ofxUICanvas::operator=(const ofxUICanvas &other) {
     bInsideCanvas = other.bInsideCanvas;
     enabled = other.enabled;
     state = other.state;
-<<<<<<< HEAD
 
-=======
->>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
     if(other.rect) {
         init(other.rect->getX(), other.rect->getY(), other.rect->getWidth(), other.rect->getHeight());
     }
@@ -612,7 +605,6 @@ void ofxUICanvas::disable() {
     }
 }
 
-<<<<<<< HEAD
 void ofxUICanvas::initFbo()
 {
 	if(bFirst)
@@ -666,8 +658,6 @@ void ofxUICanvas::initFbo()
 	}
 }
 
-=======
->>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 void ofxUICanvas::update() {
     if (!isVisible()) { return; } // Custom to save framerate
 
@@ -675,25 +665,17 @@ void ofxUICanvas::update() {
     vector<ofxUIWidget *>::iterator eit = widgets.end();
     for(; it != eit; ++it) {
         (*it)->update();
-<<<<<<< HEAD
 		// --!瞎jb改 這尼瑪都什麼玩意
 		(*it)->setRedraw(true);
-=======
->>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
     }
 }
 
 void ofxUICanvas::draw() {
-<<<<<<< HEAD
 	initFbo();
 
 	ofxUIPushStyle();
 	
 	// --!删去以下blend及disable设置并不影响
-=======
-    ofxUIPushStyle();
-
->>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
     glDisable(GL_DEPTH_TEST);
     glDisable(GL_LIGHTING);
 
@@ -703,7 +685,6 @@ void ofxUICanvas::draw() {
 #endif
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-<<<<<<< HEAD
 	ofxUISetRectMode(OFX_UI_RECTMODE_CORNER);
 	ofxUISetLineWidth(1.0);
 
@@ -768,52 +749,6 @@ void ofxUICanvas::draw() {
 	ofxUIPopStyle();
 
 	frameBuffer.draw(rect->x, rect->y);
-=======
-    ofxUISetRectMode(OFX_UI_RECTMODE_CORNER);
-	ofxUISetLineWidth(1.0);
-
-	// --!只有在Canvas可以绘制才会绘制
-	if(isDrawable())
-	{
-		ofxUIPushStyle();
-
-		drawPadded();
-		drawPaddedOutline();
-		drawBack();
-		drawFill();
-		drawFillHighlight();
-		drawOutline();
-		drawOutlineHighlight();
-
-		ofxUIPopStyle();
-	}
-
-	// 遍历所有子控件 
-	vector<ofxUIWidget *>::reverse_iterator it = widgets.rbegin();
-	vector<ofxUIWidget *>::reverse_iterator eit = widgets.rend();
-
-	for(; it != eit; ++it) {
-		// 原本为((*it)->isVisible() && ((*it)->getRect()->rInside(*rect) || (*it)->isModal()))
-		// --!因子控件的位置在frameAnimation状态可以随意指定 因此 不对是否在Canvas的rect内进行判断
-		if((*it)->getDrawMode() != OFX_UI_DRAW_DEFAULT)
-		{
-			//if((*it)->isVisible() && ((*it)->getRect()->rInside(*rect) || (*it)->isModal())) {
-			//	(*it)->draw();
-			//}
-			if((*it)->isVisible()) {
-				(*it)->draw();
-			}
-
-		}
-		else
-		{
-			if((*it)->isVisible()) {
-				(*it)->draw();
-			}
-		}
-    }
-    ofxUIPopStyle();
->>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 }
 
 void ofxUICanvas::exit() {
@@ -1389,10 +1324,6 @@ ofxUIWidget* ofxUICanvas::addWidgetPosition(ofxUIWidget *widget, ofxUIWidgetPosi
         if (position == OFX_UI_WIDGET_POSITION_LEFT || position == OFX_UI_WIDGET_POSITION_RIGHT) {
             widgetRect->x = widgetSpacing;
         }
-<<<<<<< HEAD
-=======
-        
->>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
     }
     
 	// 计算出边距之后确定其位置

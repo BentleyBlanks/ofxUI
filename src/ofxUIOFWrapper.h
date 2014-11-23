@@ -35,11 +35,8 @@ typedef ofVec3f ofxUIVec3f;
 typedef ofVec2f ofxUIVec2f;
 typedef OFX_UI_FONT_RENDERER ofxUIFont;
 typedef ofColor ofxUIColor;
-<<<<<<< HEAD
 // --!
 typedef ofFbo ofxUIFbo;
-=======
->>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 
 #if defined( TARGET_OF_IPHONE ) || defined( TARGET_OF_IOS ) || defined( TARGET_ANDROID )
     #define OFX_UI_TARGET_TOUCH
@@ -355,7 +352,6 @@ public:
 #endif
 };
 
-<<<<<<< HEAD
 static void ofxUIClear(ofxUIColor color)
 {
 	ofClear(color);
@@ -366,8 +362,6 @@ static void ofxUIClear(float red, float green, float blue, float alpha = 1.0f)
 	ofClear(red, green, blue, alpha);
 }
 
-=======
->>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
 static void ofxUISetColor(ofxUIColor color, float alpha)
 {
     ofSetColor(color, alpha);

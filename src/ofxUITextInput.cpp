@@ -96,22 +96,16 @@ void ofxUITextInput::drawFill()
         
         float x = label->getRect()->getX()+spaceOffset;
         float y = label->getRect()->getY()-padding;
-<<<<<<< HEAD
 		
 		// --!修复在拖动Canvas时 光标位置不正确的错误
 		x -= getCanvasParent()->getRect()->x;
 		y -= getCanvasParent()->getRect()->y;
 
-=======
->>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
         float t = label->getRect()->getHeight()+padding*2.0;
         ofxUIDrawRect(x, y, cursorWidth, t);
     }
     
-<<<<<<< HEAD
 	// 复原
-=======
->>>>>>> 03cafd9e07d52d7d9b9248a68c0e10e6fbeeeabf
     if(textstring.size() == 0 && !clicked)
     {
         ofxUIFill();
