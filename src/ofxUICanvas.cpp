@@ -609,16 +609,28 @@ void ofxUICanvas::initFbo()
 {
 	if(bFirst)
 	{
-		frameBuffer.allocate(rect->width, rect->height, GL_RGBA);
+        // calculate minimum canvas rect
+        float xMax = rect->getWidth();
+        float yMax = rect->getHeight();
+        vector<ofxUIWidget *>::iterator itt = widgets.begin();
+        vector<ofxUIWidget *>::iterator eitt = widgets.end();
+        for(; itt != eitt; ++itt)
+        {
+            ofxUIRectangle *r = (*itt)->getRect();
+            xMax = rect->x + r->getMaxX() > xMax ? r->getMaxX() : xMax;
+            yMax = rect->y + r->getMaxY() > yMax ? r->getMaxY() : yMax;
+        }
+
+		//frameBuffer.allocate(rect->width, rect->height);
+        frameBuffer.allocate(xMax, yMax, GL_RGBA);
 
 		ofxUIPushStyle();
 		// 第一次全局绘制
 		frameBuffer.begin();
 		// --!只有在Canvas可以绘制才会绘制
-		if(isDrawable())
+        ofxUIClear(1.0, 1.0, 1.0, 0.0);
+        if(isDrawable())
 		{
-			//ofxUIPushStyle();
-			ofClear(0.0, 0.0, 0.0 ,1.0);
 			drawPadded();
 			drawPaddedOutline();
 			drawBack();
@@ -626,8 +638,6 @@ void ofxUICanvas::initFbo()
 			drawFillHighlight();
 			drawOutline();
 			drawOutlineHighlight();
-
-			//ofxUIPopStyle();
 		}
 
 		// 遍历所有子控件 
@@ -652,7 +662,7 @@ void ofxUICanvas::initFbo()
 		}
 
 		frameBuffer.end();
-		ofPopStyle();
+        ofxUIPopStyle();
 
 		bFirst = false;
 	}
@@ -675,42 +685,17 @@ void ofxUICanvas::draw() {
 
 	ofxUIPushStyle();
 	
-	// --!删去以下blend及disable设置并不影响
-    glDisable(GL_DEPTH_TEST);
-    glDisable(GL_LIGHTING);
-
-    glEnable(GL_BLEND);
-#ifndef OFX_UI_TARGET_TOUCH
-    glBlendEquation(GL_FUNC_ADD);
-#endif
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-	ofxUISetRectMode(OFX_UI_RECTMODE_CORNER);
-	ofxUISetLineWidth(1.0);
-
 	// --!消息处理
 	ofxUIMessageQueue* queue = ofxUIMessageQueue::getQueue();
 
-	//while(!queue->isEmpty())
-	//{
-	//	// --!只有在找到了需要绘制的消息才更新fbo
-	//	ofxUIMessage* tempMessage = queue->popMessage();
-	//	ofxUIWidget* tempWidget = tempMessage->getWidget();
-	//	// 要求该控件重绘
-	//	// 需要清空当前绘制区域
-	//	tempWidget->setRedraw(true);
-	//	tempWidget->draw();
-	//}
-
 	// --！简单逻辑 一旦发现有控件需要重绘 就重绘全部 
-	if(!queue->isEmpty())
+	//if(!queue->isEmpty())
 	{
-		// 第一次全局绘制
 		frameBuffer.begin();
 		// --!只有在Canvas可以绘制才会绘制
+        ofxUIClear(1.0, 1.0, 1.0, 0.0);
 		if(isDrawable())
 		{
-			ofxUIClear(0.0, 0.0, 0.0, 1.0);
 			drawPadded();
 			drawPaddedOutline();
 			drawBack();

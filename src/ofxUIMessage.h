@@ -40,7 +40,5 @@ private:
 	~ofxUIMessageQueue(){};
 	ofxUIMessageQueue& operator=(const ofxUIMessageQueue& event) const{};
 
-	// 手工实现的队列不如直接使用现成queue
-	//vector<ofxUIMessage*> messages;
 	deque<ofxUIMessage*> messages;
 };

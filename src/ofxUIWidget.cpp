@@ -247,11 +247,6 @@ void ofxUIWidget::update() {
 void ofxUIWidget::draw() {
 	ofxUIPushStyle();
 
- //   glEnable(GL_BLEND);
- //   glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-	//initFbo();
-	
 	// 默认的扁平风格绘制方案
 	// 只有不需要重绘的前提下才需要重绘
 	if(drawMode == OFX_UI_DRAW_DEFAULT)
